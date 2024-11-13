@@ -9,7 +9,9 @@ public class GunShoot : MonoBehaviour
 
     public float shootForce;
 
-    private bool canShoot;
+    public string soundToPlay;
+
+    public bool canShoot;
 
     public void Shoot()
     {
@@ -18,6 +20,8 @@ public class GunShoot : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, shootPos.position, Quaternion.identity);
             Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
             projectileRB.velocity = shootPos.forward * shootForce;
+
+            AudioManager.instance.Play(soundToPlay);
         }
     }
 

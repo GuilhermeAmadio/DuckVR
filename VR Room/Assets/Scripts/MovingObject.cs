@@ -8,7 +8,7 @@ public class MovingObject : MonoBehaviour, ISpawnable
 
     public Rigidbody rb;
 
-    private int direction;
+    private int direction = 1;
 
     private void Update()
     {

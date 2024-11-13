@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3044841139475356378}
   - component: {fileID: 5419442809707433872}
   - component: {fileID: 7461620862321165022}
+  - component: {fileID: 4330665937123336841}
   m_Layer: 7
   m_Name: ShipObjective
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 100
+  soundToPlay: Wood
 --- !u!114 &7461620862321165022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rb: {fileID: 3044841139475356378}
+--- !u!114 &4330665937123336841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549136874435837065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6b2641ba7cf6f46b6d430d6fbbb682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  amplitude: 0.25
 --- !u!1001 &9110912193855140192
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -74,7 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e52030f2b758134d9246c8c7012b9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 100
+  scoreValue: 1000
+  soundToPlay: Glass
 --- !u!114 &26048320623755435
 MonoBehaviour:
   m_ObjectHideFlags: 0

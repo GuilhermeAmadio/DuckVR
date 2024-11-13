@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 50
+  soundToPlay: Parrot
 --- !u!114 &-6700677586019373256
 MonoBehaviour:
   m_ObjectHideFlags: 0

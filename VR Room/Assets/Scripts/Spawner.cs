@@ -4,39 +4,44 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public float minCD, maxCD;
+    //public float minCD, maxCD;
 
     public Transform[] pos;
 
     public GameObject[] objectToSpawn;
 
-    private bool canSpawn;
+    //private bool canSpawn;
 
-    public void StartSpawning()
+    //public void StartSpawning()
+    //{
+    //    canSpawn = true;
+    //    StartCoroutine(SpawnIenumerator());
+    //}
+
+    //public void StopSpawning()
+    //{
+    //    canSpawn = false;
+    //    StopCoroutine(SpawnIenumerator());
+    //}
+
+    //private IEnumerator SpawnIenumerator()
+    //{
+    //    while (canSpawn)
+    //    {
+    //        Spawn();
+
+    //        float randomCD = Random.Range(minCD, maxCD);
+    //        yield return new WaitForSeconds(randomCD);
+    //    }
+    //}
+
+    public void Spawn()
     {
-        canSpawn = true;
-        StartCoroutine(Spawn());
-    }
+        Transform randomPos = pos[Random.Range(0, pos.Length)];
 
-    public void StopSpawning()
-    {
-        canSpawn = false;
-        StopCoroutine(Spawn());
-    }
+        GameObject randomObj = objectToSpawn[Random.Range(0, objectToSpawn.Length)];
 
-    private IEnumerator Spawn()
-    {
-        while (canSpawn)
-        {
-            Transform randomPos = pos[Random.Range(0, pos.Length)];
-
-            GameObject randomObj = objectToSpawn[Random.Range(0, objectToSpawn.Length)];
-
-            GameObject spawnedObj = Instantiate(randomObj, randomPos.position, Quaternion.identity);
-            spawnedObj.GetComponent<ISpawnable>().OnSpawn();
-
-            float randomCD = Random.Range(minCD, maxCD);
-            yield return new WaitForSeconds(randomCD);
-        }
+        GameObject spawnedObj = Instantiate(randomObj, randomPos.position, Quaternion.identity);
+        spawnedObj.GetComponent<ISpawnable>().OnSpawn();
     }
 } 

@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-    public Spawner spawner;
+    public float minCD, maxCD;
+
+    public Spawner[] spawner;
+
+    private bool canSpawn = true;
 
     public void StartSpawning()
     {
-        spawner.StartSpawning();
+        StartCoroutine(Spawn());
     }
 
     public void StopSpawning()
     {
-        spawner.StopSpawning();
+        StopAllCoroutines();
+    }
+
+    private IEnumerator Spawn()
+    {
+        while (canSpawn)
+        {
+            spawner[Random.Range(0, spawner.Length)].Spawn();
+
+            float randomCD = Random.Range(minCD, maxCD);
+            yield return new WaitForSeconds(randomCD);
+        }
     }
 }
